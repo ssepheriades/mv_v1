@@ -20,9 +20,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        var self = this;
-        self.showAlert('Store Initialized', 'Info');
-        
     },
     // Bind Event Listeners
     //
@@ -37,25 +34,16 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert("Yeah");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        /*var listeningElement = parentElement.querySelector('.listening');
+        var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);*/
-    },
-    showAlert: function (message, title) {
-    if (navigator.notification) {
-        navigator.notification.alert(message, null, title, 'OK');
-    } else {
-        alert(title ? (title + ": " + message) : message);
+        console.log('Received Event: ' + id);
     }
-    }
-
 };
